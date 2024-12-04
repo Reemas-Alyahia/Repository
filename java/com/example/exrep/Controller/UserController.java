@@ -51,25 +51,25 @@ public class UserController {
     @GetMapping("getemail/{email}")
     public ResponseEntity getUsernameAndPass(@PathVariable String email){
         User user=userService.findUserbyEmail(email);
-        return ResponseEntity.status(200).body(new ApiResponce("User Found"));
+        return ResponseEntity.status(200).body(user);
     }
     @GetMapping("getUser/username/{username}/passwords/{pass}")
     public ResponseEntity findUserbyEmail(@PathVariable String username,@PathVariable String pass){
         User user=userService.checkUsernameAndPass(username,pass);
-        return ResponseEntity.status(200).body(new ApiResponce("User Found"));
+        return ResponseEntity.status(200).body(user);
 
     }
 
     @GetMapping("getRole/{role}")
     public ResponseEntity getrole(@PathVariable String role){
         List<User> user=userService.getrole(role);
-        return ResponseEntity.status(200).body(new ApiResponce("User Found"));
+        return ResponseEntity.status(200).body(user);
     }
 
     @GetMapping("getUsersAge/{age}")
     public ResponseEntity getUsersAge(@PathVariable Integer age){
         List<User> user=userService.getUsersAge(age);
-        return ResponseEntity.status(200).body(new ApiResponce("User Found"));
+        return ResponseEntity.status(200).body(user);
     }
 
 

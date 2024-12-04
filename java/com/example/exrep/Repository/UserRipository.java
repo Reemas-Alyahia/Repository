@@ -8,9 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-///     //UserRipository
-///
-///
 
 @Repository
 public interface UserRipository extends JpaRepository<User,Integer> {
@@ -33,7 +30,7 @@ public interface UserRipository extends JpaRepository<User,Integer> {
     @Query("select u from User u where u.role=?1")
     List<User>  getSpecificRole(String role);
 
-    @Query("select u from User u where u.age<=?1")
+    @Query("select u from User u where u.age>=?1")
     List<User> getUsererbyAge(Integer age);
 
 
